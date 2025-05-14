@@ -2,7 +2,7 @@ package string;
 
 import java.util.Scanner;
 
-public class Baek_2744_String {
+public class Baek_2744 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
