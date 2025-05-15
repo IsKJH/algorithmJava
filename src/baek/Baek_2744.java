@@ -1,4 +1,4 @@
-package string;
+package baek;
 
 import java.util.Scanner;
 
