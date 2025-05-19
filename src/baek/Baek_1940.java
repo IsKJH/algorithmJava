@@ -2,12 +2,23 @@ package baek;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 public class Baek_1940 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int size = Integer.parseInt(br.readLine());
+		int target = Integer.parseInt(br.readLine());
+		String[] arr = br.readLine().split(" ");
+		int startIdx = 0;
+		int endIdx = 1;
+		int cnt = 0;
+		System.out.println(size);
+		System.out.println(target);
+		System.out.println(Arrays.toString(arr));
 	}
 }
