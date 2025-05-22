@@ -38,28 +38,37 @@ public class Baek_10845 {
 				}
 				break;
 			case "front":
-				for (int num : queue) {
-					if (cnt == 1) {
-						result = num;
-						break;
-					} else {
-						cnt++;
+				if (queue.size() == 0) {
+					System.out.println(-1);
+				} else {
+					for (int num : queue) {
+						if (cnt == 1) {
+							result = num;
+							break;
+						} else {
+							cnt++;
+						}
 					}
+					System.out.println(result);
 				}
-				System.out.println(result);
+
 				break;
 			case "back":
 				cnt = 1;
 				result = 0;
-				for (int num : queue) {
-					if (cnt == queue.size()) {
-						result = num;
-						break;
-					} else {
-						cnt++;
+				if (queue.size() == 0) {
+					System.out.println(-1);
+				} else {
+					for (int num : queue) {
+						if (cnt == queue.size()) {
+							result = num;
+							break;
+						} else {
+							cnt++;
+						}
 					}
+					System.out.println(result);
 				}
-				System.out.println(result);
 				break;
 			}
 		}
