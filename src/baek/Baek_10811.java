@@ -3,26 +3,40 @@ package baek;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Baek_10811 {
-
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		String[] arr = br.readLine().split(" ");
-		int[] basket = new int[Integer.parseInt(arr[0])];
-		Arrays.setAll(basket, index -> index + 1);
-		for (int i = 0; i < Integer.parseInt(arr[1]); i++) {
-			String[] reverse = br.readLine().split(" ");
 
-			for (int j = Integer.parseInt(reverse[0]); j < Integer.parseInt(reverse[1]) - 1; j++) {
-				int temp = basket[i];
-				basket[i] = basket[i + 1];
-				basket[i + 1] = temp;
-			}
-			System.out.println(Arrays.toString(basket));
+		int n = Integer.parseInt(arr[0]);
+		int m = Integer.parseInt(arr[1]);
+
+		int[] basket = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			basket[i] = i + 1;
 		}
 
+		for (int i = 0; i < m; i++) {
+			String[] range = br.readLine().split(" ");
+			int start = Integer.parseInt(range[0]) - 1;
+			int end = Integer.parseInt(range[1]) - 1;
+
+			for (int j = 0; j < (end - start + 1) / 2; j++) {
+				int temp = basket[start + j];
+				basket[start + j] = basket[end - j];
+				basket[end - j] = temp;
+			}
+		}
+
+		for (int i = 0; i < n; i++) {
+			sb.append(basket[i]);
+			if (i < n - 1)
+				sb.append(" ");
+		}
+
+		System.out.println(sb.toString());
 	}
 }
